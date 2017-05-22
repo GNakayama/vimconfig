@@ -1,0 +1,122 @@
+set nocompatible " required
+
+filetype off     " required
+syntax enable
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Folding with spacebar
+nnoremap <space> za
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+ 
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Add all Plugins here
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'tpope/vim-commentary'
+Plugin 'matze/vim-move'
+Plugin 'majutsushi/tagbar'
+Plugin 'Yggdroot/indentLine'
+
+" All Plugins must be added before the following line
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+let g:SimpylFold_docstring_preview=1
+
+" Identation
+au BufNewFile,BufRead *.py,*.css,*.js,*.jsx,*.scss,*.html,*.cpp,*.hpp,*.c,*.h
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set shiftround |
+    \ set fileformat=unix |
+
+" Flag Whitespaces
+highlight BadWhiteSpace ctermbg=white
+au BufRead,BufNewFile *.py,*pyw,*.c,*.h,*.js,*.cpp,*.hpp match BadWhitespace /\s\+$/
+
+" Choose colorscheme
+if has('gui_running')
+	set background=dark
+	colorscheme solarized
+else
+	colorscheme zenburn
+endif
+
+" Leading spaces
+let g:indentLine_enabled = 0
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceCha = '.'
+
+
+" Line Numbering
+set nu
+
+"Ignore this files
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
+" Only open nerdtree if no file was specified on startup
+function! StartUpNerdtree()
+	if 0 == argc()
+		NERDTree
+        endif
+endfunction
+
+autocmd VimEnter * call StartUpNerdtree()
+
+" Backups
+if has('persistent_undo')
+	set undodir=~/.vim/tmp/undo//     " undo files
+	set undofile
+	set undolevels=3000
+	set undoreload=10000
+endif
+	
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
+set backup
+set noswapfile
+
+" Powerline
+set laststatus=2
+set t_Co=256
+set statusline=%f
+set statusline+=\ %h%w%m%r
+set statusline+=%=
+set statusline+=%-16(%{exists('g:loaded_fugitive')?fugitive#statusline():''}\%)
+set statusline+=\ %P/%L
+set statusline+=\
+
+let g:move_key_modifier = 'C'
+
+"Switch split vertical
+noremap <C-Right> <C-W>w
+noremap <C-Left> <C-W>p
+
+"Remap
+noremap  <F6> :NERDTreeTabsToggle<CR>
+noremap  <TAB> :tabp<CR>
+noremap  <S-TAB> :tabn<CR>
+
+"Tagbar
+noremap <F8> :TagbarToggle<CR>
