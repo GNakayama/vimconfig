@@ -1,4 +1,6 @@
 set nocompatible " required
+set encoding=utf-8  " The encoding displayed.
+set fileencoding=utf-8  " The encoding written to file.
 
 filetype off     " required
 syntax enable
@@ -40,12 +42,20 @@ filetype plugin indent on    " required
 
 let g:SimpylFold_docstring_preview=1
 
+" copy and paste to/from vIM and the clipboard
+nnoremap <C-y> +y
+vnoremap <C-y> +y
+nnoremap <C-p> +P
+vnoremap <C-p> +P
+
+" access system clipboard
+set clipboard=unnamed
+
 " Identation
 au BufNewFile,BufRead *.py,*.css,*.js,*.jsx,*.scss,*.html,*.cpp,*.hpp,*.c,*.h
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=79 |
     \ set expandtab |
     \ set autoindent |
     \ set shiftround |
@@ -53,7 +63,7 @@ au BufNewFile,BufRead *.py,*.css,*.js,*.jsx,*.scss,*.html,*.cpp,*.hpp,*.c,*.h
 
 " Flag Whitespaces
 highlight BadWhiteSpace ctermbg=white
-au BufRead,BufNewFile *.py,*pyw,*.c,*.h,*.js,*.cpp,*.hpp match BadWhitespace /\s\+$/
+au BufRead,BufNewFile *.py,*pyw,*.c,*.h,*.js,*.cpp,*.hpp,*.html match BadWhitespace /\s\+$/
 
 " Choose colorscheme
 if has('gui_running')
@@ -117,6 +127,7 @@ noremap <C-Left> <C-W>p
 noremap  <F6> :NERDTreeTabsToggle<CR>
 noremap  <TAB> :tabp<CR>
 noremap  <S-TAB> :tabn<CR>
+nmap <silent> <C-D> :NERDTreeToggle<CR>
 
 "Tagbar
 noremap <F8> :TagbarToggle<CR>
