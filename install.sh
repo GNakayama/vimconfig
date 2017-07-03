@@ -25,4 +25,9 @@ if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
 	/bin/git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 fi
 
-/bin/cp .vimrc $HOME/
+if [ -f "$HOME/.vimrc" ]; then
+	/bin/rm "$HOME/.vimrc"
+fi
+
+
+/bin/ln .vimrc $HOME/.vimrc
