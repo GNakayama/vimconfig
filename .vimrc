@@ -1,6 +1,8 @@
 set nocompatible " required
 set encoding=utf-8  " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
+set hls
+set is
 
 filetype off     " required
 syntax enable
@@ -8,6 +10,9 @@ syntax enable
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
+
+" Press Space to turn off highlighting and clear any message already displayed.
+:nnoremap <C-Space> :nohlsearch<Bar>:echo<CR>
 
 " Folding with spacebar
 nnoremap <space> za
@@ -120,8 +125,8 @@ set statusline+=\
 let g:move_key_modifier = 'C'
 
 "Switch split vertical
-noremap <C-Right> <C-W>w
-noremap <C-Left> <C-W>p
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
 
 "Remap
 noremap  <F6> :NERDTreeTabsToggle<CR>
@@ -131,3 +136,15 @@ nmap <silent> <C-D> :NERDTreeToggle<CR>
 
 "Tagbar
 noremap <F8> :TagbarToggle<CR>
+
+"Disable Arrows
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+" Disable Arrow keys in Insert mode
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
