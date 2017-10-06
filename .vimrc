@@ -67,6 +67,15 @@ au BufNewFile,BufRead *.py,*.css,*.js,*.jsx,*.scss,*.html,*.cpp,*.hpp,*.c,*.h
     \ set shiftround |
     \ set fileformat=unix |
 
+au BufNewFile,BufRead *.rb
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set shiftround |
+    \ set fileformat=unix |
+
 " Flag Whitespaces
 highlight BadWhiteSpace ctermbg=white
 au BufRead,BufNewFile *.py,*pyw,*.c,*.h,*.js,*.cpp,*.hpp,*.html match BadWhitespace /\s\+$/
