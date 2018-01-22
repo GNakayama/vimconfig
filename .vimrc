@@ -161,3 +161,8 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+
+" Reek configuration
+let g:reek_line_limit = 110
+let g:reek_always_show = 0
+let g:reek_on_loading = 0
