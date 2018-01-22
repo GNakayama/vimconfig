@@ -40,6 +40,9 @@ Plugin 'tpope/vim-commentary'
 Plugin 'matze/vim-move'
 Plugin 'majutsushi/tagbar'
 Plugin 'Yggdroot/indentLine'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'rainerborene/vim-reek'
 
 " All Plugins must be added before the following line
 
@@ -55,7 +58,7 @@ nnoremap <C-p> +P
 vnoremap <C-p> +P
 
 " access system clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Identation
 au BufNewFile,BufRead *.py,*.css,*.js,*.jsx,*.scss,*.html,*.cpp,*.hpp,*.c,*.h
