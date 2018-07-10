@@ -31,3 +31,4 @@ fi
 
 
 /bin/ln .vimrc $HOME/.vimrc
+/bin/vim +PluginInstall +qall
