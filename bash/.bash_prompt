@@ -41,6 +41,7 @@ prompt_git() {
 
 		fi;
 
+		s+=")"
 		# Get the short symbolic ref.
 		# If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
 		# Otherwise, just give up.
