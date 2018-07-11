@@ -5,11 +5,11 @@
 [[ $- != *i* ]] && return
 
 # setup prompt
-if [ ! "$HOME/.bash_prompt" ]; then
+if [ -f "$HOME/.bash_prompt" ]; then
 	. ~/.bash_prompt
 fi
 
 # setup aliases
-if [ ! "$HOME/.aliases" ]; then
+if [ -f "$HOME/.aliases" ]; then
 	. ~/.aliases
 fi
