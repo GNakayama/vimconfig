@@ -43,6 +43,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rainerborene/vim-reek'
+Plugin 'ryanoasis/vim-devicons'
 
 " All Plugins must be added before the following line
 
@@ -110,6 +111,8 @@ function! StartUpNerdtree()
         endif
 endfunction
 
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
 autocmd VimEnter * call StartUpNerdtree()
 
 " Backups
@@ -166,3 +169,5 @@ imap <right> <nop>
 let g:reek_line_limit = 110
 let g:reek_always_show = 0
 let g:reek_on_loading = 0
+
+set guifont=Mononoki\ Nerd\ Font\ 11
