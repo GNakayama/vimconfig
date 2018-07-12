@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 
 alias ls='ls --color=auto'
+alias cp="cp -i"                          # confirm before overwriting something
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+
+if [ -f "$HOME/.extra_aliases" ]; then
+	. ~/.extra_aliases
+fi
