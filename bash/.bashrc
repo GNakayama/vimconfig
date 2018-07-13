@@ -27,4 +27,8 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
     eval "$(<~/.ssh-agent-thing > /dev/null)"
 fi
 
-
+# Completion
+git_completion_file="/usr/share/git/completion/git-completion.bash"
+if [ -f $git_completion_file ]; then
+	. $git_completion_file 
+fi
