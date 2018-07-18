@@ -32,3 +32,6 @@ git_completion_file="/usr/share/git/completion/git-completion.bash"
 if [ -f $git_completion_file ]; then
 	. $git_completion_file 
 fi
+
+# Allows ctr+s in terminal
+stty -ixon
