@@ -171,3 +171,14 @@ let g:reek_always_show = 0
 let g:reek_on_loading = 0
 
 set guifont=Mononoki\ Nerd\ Font\ 11
+
+nmap <silent> <C-E> :q<CR>
+
+" Fugitive keybindings
+nmap <silent> <up> :Gread<CR>
+nmap <silent> <down> :Gdiff<CR>
+nmap <silent> <left> :Gstatus<CR>
+nmap <silent> <right> :Gblame<CR>
+nmap <silent> <C-up> :Git push<CR>
+nmap <silent> <C-down> :Git pull<CR>
+nmap <silent> <C-left> :Gcommit<CR>
