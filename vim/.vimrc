@@ -182,3 +182,7 @@ nmap <silent> <right> :Gblame<CR>
 nmap <silent> <C-up> :Git push<CR>
 nmap <silent> <C-down> :Git pull<CR>
 nmap <silent> <C-left> :Gcommit<CR>
+
+" Keybindings
+inoremap <silent> <C-S> <C-C>:update<CR>
+noremap <silent> <C-S> :update<CR>
