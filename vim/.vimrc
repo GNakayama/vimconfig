@@ -47,6 +47,9 @@ Plugin 'ryanoasis/vim-devicons'
 
 " All Plugins must be added before the following line
 
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -96,7 +99,6 @@ endif
 let g:indentLine_enabled = 0
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceCha = '.'
-
 
 " Line Numbering
 set nu
@@ -186,3 +188,10 @@ nmap <silent> <C-left> :Gcommit<CR>
 " Keybindings
 inoremap <silent> <C-S> <C-C>:update<CR>
 noremap <silent> <C-S> :update<CR>
+"
+" Set line wrap
+set wrap
+set linebreak
+set nolist
+map j gj
+map k gk
