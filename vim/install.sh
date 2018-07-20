@@ -42,5 +42,12 @@ fi
 /bin/ln .vimrc $HOME/.vimrc
 /bin/vim +PluginInstall +qall
 
-install_font_icons
+# Install mononoki font if it is not installed
+if ! ls $HOME/.local/share/fonts/NerdFonts/mononoki* 1> /dev/null 2>&1; then
+	install_font_icons
+fi
 
+# Install ctags if it is not installed
+if ! pacman -Qi ctags 1> /dev/null 2>&1; then
+	sudo pacman ctags
+fi
