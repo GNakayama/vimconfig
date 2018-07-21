@@ -55,6 +55,7 @@ nnoremap <leader>f :CtrlPTag<cr>
 
 " Ctags
 nnoremap <leader>c :!ctags -R<cr>
+set notagrelative
 
 call vundle#end()            " required
 filetype plugin indent on    " required
