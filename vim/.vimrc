@@ -50,6 +50,9 @@ Plugin 'ryanoasis/vim-devicons'
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
 
+" CtrlP
+nnoremap <leader>f :CtrlPTag<cr>
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
