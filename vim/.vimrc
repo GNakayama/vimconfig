@@ -53,6 +53,9 @@ let g:syntastic_always_populate_loc_list = 1
 " CtrlP
 nnoremap <leader>f :CtrlPTag<cr>
 
+" Ctags
+nnoremap <leader>c :!ctags -R<cr>
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
