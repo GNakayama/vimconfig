@@ -30,6 +30,7 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
+Plugin 'ambv/black'
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
@@ -46,6 +47,9 @@ Plugin 'rainerborene/vim-reek'
 Plugin 'ryanoasis/vim-devicons'
 
 " All Plugins must be added before the following line
+
+" Black
+autocmd BufWritePost *.py execute ':Black'
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
