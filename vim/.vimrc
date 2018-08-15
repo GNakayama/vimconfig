@@ -45,11 +45,14 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rainerborene/vim-reek'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'davidhalter/jedi-vim'
 
 " All Plugins must be added before the following line
 
 " Black
-autocmd BufWritePost *.py execute ':Black'
+function EnableBlack()
+	autocmd BufWritePost *.py execute ':Black'
+endfunction
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -60,6 +63,9 @@ nnoremap <leader>f :CtrlPTag<cr>
 " Ctags
 nnoremap <leader>c :!ctags -R<cr>
 set notagrelative
+
+" Flake8
+let g:syntastic_python_flake8_args='--ignore=E501'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -197,8 +203,10 @@ nmap <silent> <C-down> :Git pull<CR>
 nmap <silent> <C-left> :Gcommit<CR>
 
 " Keybindings
+noremap <esc>[1;5D <CLeft>
 inoremap <silent> <C-S> <C-C>:update<CR>
 noremap <silent> <C-S> :update<CR>
+noremap <silent> <CLeft-L> :copen<CR>
 "
 " Set line wrap
 set wrap
