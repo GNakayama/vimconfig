@@ -8,3 +8,8 @@ alias free='free -m'                      # show sizes in MB
 if [ -f "$HOME/.extra_aliases" ]; then
 	. ~/.extra_aliases
 fi
+
+# Git aliases
+alias gc='git commit'
+alias ga='git add'
+alias gs='git status'
