@@ -10,6 +10,10 @@ if [ -f "$HOME/.extra_aliases" ]; then
 fi
 
 # Git aliases
-alias gc='git commit'
+alias gc='git commit -m'
 alias ga='git add'
 alias gs='git status'
+alias gp='git push'
+alias gpso='git push --set-upstream origin'
+alias gd='git diff'
+alias gf='git fetch'
