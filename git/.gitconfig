@@ -18,3 +18,9 @@
   added = yellow
   changed = green
   untracked = cyan
+
+[rebase]
+  autoStash = true
+
+[checkout]
+  autoStash = true
