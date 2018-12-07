@@ -17,3 +17,7 @@ alias gp='git push'
 alias gpso='git push --set-upstream origin'
 alias gd='git diff'
 alias gf='git fetch'
+
+# Dualhead aliases
+alias enable-dual='xrandr --output eDP1 --auto --primary --mode 1920x1080 --output HDMI2 --auto --mode 1920x1080 --above eDP1'
+alias disable-dual='xrandr --output eDP1 --auto --output HDMI2 --off'
