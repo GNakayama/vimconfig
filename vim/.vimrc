@@ -46,13 +46,23 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rainerborene/vim-reek'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'hashivim/vim-terraform'
 
 " All Plugins must be added before the following line
 
+" Terraform
+let g:terraform_fmt_on_save=1
+
 " Black
 function EnableBlack()
-	autocmd BufWritePost *.py execute ':Black'
+	autocmd BufWritePost *.py silent! execute ':Black'
 endfunction
+
+function DisableBlack()
+	autocmd! BufWritePost *.py
+endfunction
+
+call EnableBlack()
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -73,10 +83,10 @@ filetype plugin indent on    " required
 let g:SimpylFold_docstring_preview=1
 
 " copy and paste to/from vIM and the clipboard
-nnoremap <C-y> +y
-vnoremap <C-y> +y
-nnoremap <C-p> +P
-vnoremap <C-p> +P
+noremap <Leader>Y "*y
+noremap <Leader>P "*p
+noremap <Leader>y "+y
+noremap <Leader>p "+p
 
 " access system clipboard
 set clipboard=unnamedplus
@@ -157,7 +167,7 @@ set statusline+=%-16(%{exists('g:loaded_fugitive')?fugitive#statusline():''}\%)
 set statusline+=\ %P/%L
 set statusline+=\
 
-let g:move_key_modifier = 'C'
+let g:move_key_modifier = 'A'
 
 "Switch split vertical
 noremap <C-h> <C-W>h
