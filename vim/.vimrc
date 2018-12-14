@@ -47,8 +47,14 @@ Plugin 'rainerborene/vim-reek'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'hashivim/vim-terraform'
+Plugin 'fatih/vim-go'
+Plugin 'fisadev/vim-isort'
+
 
 " All Plugins must be added before the following line
+
+" ISort
+autocmd BufWritePost *.py silent! execute ':Isort'
 
 " Terraform
 let g:terraform_fmt_on_save=1
