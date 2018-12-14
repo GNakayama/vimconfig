@@ -81,7 +81,7 @@ nnoremap <leader>c :!ctags -R<cr>
 set notagrelative
 
 " Flake8
-let g:syntastic_python_flake8_args='--ignore=E501'
+let g:syntastic_python_flake8_args='--ignore=E501,W508'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
