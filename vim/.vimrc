@@ -49,6 +49,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'hashivim/vim-terraform'
 Plugin 'fatih/vim-go'
 Plugin 'fisadev/vim-isort'
+Plugin 'avakhov/vim-yaml'
 
 
 " All Plugins must be added before the following line
