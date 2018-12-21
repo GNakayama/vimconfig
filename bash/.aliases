@@ -19,7 +19,14 @@ alias gd='git diff'
 alias gf='git fetch'
 alias gcm='git checkout master'
 alias gb='git branch'
+alias gr='git rebase'
+alias grm='git rebase master'
 
 # Dualhead aliases
 alias enable-dual='xrandr --output eDP1 --auto --primary --mode 1920x1080 --output HDMI2 --auto --mode 1920x1080 --above eDP1'
 alias disable-dual='xrandr --output eDP1 --auto --output HDMI2 --off'
+alias em='enable-dual'
+alias dm='disable-dual'
+
+# Paths
+alias development='cd ~/development'
