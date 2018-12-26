@@ -99,16 +99,7 @@ noremap <Leader>p "+p
 set clipboard=unnamedplus
 
 " Identation
-au BufNewFile,BufRead *.py,*.css,*.js,*.jsx,*.scss,*.html,*.cpp,*.hpp,*.c,*.h
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set shiftround |
-    \ set fileformat=unix |
-
-au BufNewFile,BufRead *.rb
+au BufNewFile,BufRead *.py,*.css,*.js,*.jsx,*.scss,*.html,*.cpp,*.hpp,*.c,*.h,*.rb
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
@@ -116,6 +107,7 @@ au BufNewFile,BufRead *.rb
     \ set autoindent |
     \ set shiftround |
     \ set fileformat=unix |
+
 
 " Flag Whitespaces
 highlight BadWhiteSpace ctermbg=white
