@@ -82,7 +82,7 @@ nnoremap <leader>c :!ctags -R<cr>
 set notagrelative
 
 " Flake8
-let g:syntastic_python_flake8_args='--ignore=E501,W508'
+let g:syntastic_python_flake8_args='--ignore=E501,W508,W503'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -223,3 +223,5 @@ set linebreak
 set nolist
 map j gj
 map k gk
+
+set spell
