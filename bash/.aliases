@@ -23,7 +23,7 @@ alias gr='git rebase'
 alias grm='git rebase master'
 
 # Dualhead aliases
-alias enable-dual='xrandr --output eDP1 --auto --primary --mode 1920x1080 --output HDMI2 --auto --mode 1920x1080 --above eDP1'
+alias enable-dual-home='xrandr --output eDP1 --auto --primary --mode 1920x1080 --output HDMI2 --auto --mode 1920x1080 --right-of eDP1'
 alias disable-dual='xrandr --output eDP1 --auto --output HDMI2 --off'
 alias em='enable-dual'
 alias dm='disable-dual'
