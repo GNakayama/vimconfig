@@ -21,6 +21,7 @@ alias gcm='git checkout master'
 alias gb='git branch'
 alias gr='git rebase'
 alias grm='git rebase master'
+alias gpf='git push --force'
 
 # Dualhead aliases
 alias enable-dual-home='xrandr --output eDP1 --auto --primary --mode 1920x1080 --output HDMI2 --auto --mode 1920x1080 --right-of eDP1'
