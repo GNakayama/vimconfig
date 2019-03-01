@@ -82,12 +82,18 @@ nnoremap <leader>c :!ctags -R<cr>
 set notagrelative
 
 " Flake8
-let g:syntastic_python_flake8_args='--ignore=E501,W508,W503'
+let g:syntastic_python_flake8_args='--ignore=E501,W508'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 let g:SimpylFold_docstring_preview=1
+
+" Go
+let g:go_fmt_command = "goimports"
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 
 " copy and paste to/from vIM and the clipboard
 noremap <Leader>Y "*y
@@ -224,4 +230,4 @@ set nolist
 map j gj
 map k gk
 
-set spell
+let g:python3_host_prog = '/bin/python3'
