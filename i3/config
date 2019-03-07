@@ -349,7 +349,7 @@ bar {
 # bindsym $mod+m bar mode toggle
 
 # move workspace to output
-bindsym $mod+n move workspace to output right
+bindsym $mod+n move workspace to output left
 bindsym $mod+m move workspace to output right
 
 # Theme colors
