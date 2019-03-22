@@ -10,7 +10,7 @@ if [ -f "$HOME/.extra_aliases" ]; then
 fi
 
 # Git aliases
-alias gc='git commit -m'
+alias gc='git commit'
 alias ga='git add'
 alias gs='git status'
 alias gp='git push'
@@ -26,7 +26,7 @@ alias gaa='git add --all'
 alias gpl='git pull'
 
 # Dualhead aliases
-alias enable-dual='xrandr --output eDP1 --auto --primary --mode 1920x1080 --output HDMI2 --auto --mode 1920x1080 --above eDP1'
+alias enable-dual='xrandr --output eDP1 --auto --primary --mode 1920x1080 --output HDMI2 --auto --mode 1920x1080 --left-of eDP1'
 alias enable-dual-home='xrandr --output eDP1 --auto --primary --mode 1920x1080 --output HDMI2 --auto --mode 1920x1080 --right-of eDP1'
 alias disable-dual='xrandr --output eDP1 --auto --output HDMI2 --off'
 alias em='enable-dual'

@@ -35,3 +35,4 @@ fi
 
 # Allows ctr+s in terminal
 stty -ixon
+source /usr/share/nvm/init-nvm.sh
