@@ -94,6 +94,12 @@ let g:go_fmt_command = "goimports"
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'deadcode']
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+"
+" Execute current .py file
+au BufEnter,BufNew *.py map <F9> :exec '!clear; python "%:p"' <Enter>
+
+" Cat file content
+noremap <F10> :exec '!cat "%:p"' <Enter>
 
 " copy and paste to/from vIM and the clipboard
 noremap <Leader>Y "*y
