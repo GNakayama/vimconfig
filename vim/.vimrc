@@ -50,6 +50,7 @@ Plugin 'hashivim/vim-terraform'
 Plugin 'fatih/vim-go'
 Plugin 'fisadev/vim-isort'
 Plugin 'avakhov/vim-yaml'
+Plugin 'vim-scripts/pylint-mode'
 
 
 " All Plugins must be added before the following line
@@ -89,6 +90,11 @@ filetype plugin indent on    " required
 
 let g:SimpylFold_docstring_preview=1
 
+" Pylint
+let g:PyLintCWindow = 1
+let g:PyLintSigns = 1
+let g:PyLintOnWrite = 1
+
 " Go
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_autosave = 1
@@ -100,6 +106,14 @@ au BufEnter,BufNew *.py map <F9> :exec '!clear; python "%:p"' <Enter>
 
 " Cat file content
 noremap <F10> :exec '!cat "%:p"' <Enter>
+
+" Insert pdb
+function! InsertLine()
+  let trace = expand("import pdb; pdb.set_trace()")
+  execute "normal o".trace
+endfunction
+
+map <Leader>D :call InsertLine()<CR>
 
 " copy and paste to/from vIM and the clipboard
 noremap <Leader>Y "*y
@@ -119,7 +133,6 @@ au BufNewFile,BufRead *.py,*.css,*.js,*.jsx,*.scss,*.html,*.cpp,*.hpp,*.c,*.h,*.
     \ set autoindent |
     \ set shiftround |
     \ set fileformat=unix |
-
 
 " Flag Whitespaces
 highlight BadWhiteSpace ctermbg=white
