@@ -38,8 +38,13 @@ if [ -f "$HOME/.vimrc" ]; then
 	/bin/rm "$HOME/.vimrc"
 fi
 
+if [ -f "$HOME/.vim/templates" ]; then
+	/bin/rm -r "$HOME/.vim/templates"
+fi
+
 
 /bin/ln .vimrc $HOME/.vimrc
+/bin/ln ./templates $HOME/.vim/templates
 /bin/vim +PluginInstall +qall
 
 # Install mononoki font if it is not installed
