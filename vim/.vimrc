@@ -51,7 +51,17 @@ Plugin 'fatih/vim-go'
 Plugin 'fisadev/vim-isort'
 Plugin 'avakhov/vim-yaml'
 Plugin 'vim-scripts/pylint-mode'
+Plugin 'mxw/vim-jsx'
+Plugin 'elzr/vim-json'
+Plugin 'w0rp/ale'
+Plugin 'igemnace/vim-template-lite'
 
+""" VIM-TEMPLATE-LITE {{{
+" declare mappings of patterns to templates to load
+let g:template_lite_mappings = {
+  \  '*.component.jsx': 'react/component.jsx',
+  \  '*.hoc.jsx': 'react/hoc.jsx',
+  \}
 
 " All Plugins must be added before the following line
 
@@ -73,7 +83,7 @@ endfunction
 call EnableBlack()
 
 " Syntastic
-let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_always_populate_loc_list=0
 
 " CtrlP
 nnoremap <leader>f :CtrlPTag<cr>
@@ -82,9 +92,20 @@ nnoremap <leader>f :CtrlPTag<cr>
 nnoremap <leader>c :!ctags -R<cr>
 set notagrelative
 
+" Ale
+let g:ale_python_flake8_args = '--ignore=E501,W508,W503'
+let g:ale_python_flake8_executable = 'flake8'
+let g:ale_python_flake8_options = '--ignore=E501,W508,W503'
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint', 'importjs', 'prettier'],
+\}
+
 " Flake8
 let g:syntastic_python_flake8_args='--ignore=E501,W508,W503'
-
+let g:flake8_show_in_file=1
+autocmd BufWritePost *.py silent! execute ':call flake8#Flake8()'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -93,7 +114,7 @@ let g:SimpylFold_docstring_preview=1
 " Pylint
 let g:PyLintCWindow = 1
 let g:PyLintSigns = 1
-let g:PyLintOnWrite = 1
+let g:PyLintOnWrite = 0
 
 " Go
 let g:go_fmt_command = "goimports"
@@ -125,7 +146,17 @@ noremap <Leader>p "+p
 set clipboard=unnamedplus
 
 " Identation
-au BufNewFile,BufRead *.py,*.css,*.js,*.jsx,*.scss,*.html,*.cpp,*.hpp,*.c,*.h,*.rb
+au BufNewFile,BufRead *.py,*.html,*.cpp,*.hpp,*.c,*.h,*.rb
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set shiftround |
+    \ set fileformat=unix |
+"
+" Identation JS, JSX, JSON
+au BufNewFile,BufRead *.js,*.jsx,*.scss,*.json
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
