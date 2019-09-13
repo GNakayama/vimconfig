@@ -80,13 +80,13 @@ function DisableBlack()
 	autocmd! BufWritePost *.py
 endfunction
 
-+" ISort
-+function FormatPython()
-+       execute ':Isort'
-+       execute ':Black'
-+endfunction
-+
-+autocmd BufWritePost *.py silent! execute ':call FormatPython()'
+" ISort
+function FormatPython()
+       execute ':Isort'
+       execute ':Black'
+endfunction
+
+autocmd BufWritePost *.py silent! execute ':call FormatPython()'
 
 
 " Syntastic
