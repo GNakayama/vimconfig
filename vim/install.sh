@@ -53,6 +53,6 @@ if ! ls $HOME/.local/share/fonts/NerdFonts/mononoki* 1> /dev/null 2>&1; then
 fi
 
 # Install ctags if it is not installed
-if ! yaourt -Qi universal-ctags-git 1> /dev/null 2>&1; then
-	yaourt universal-ctags-git
+if ! yay -Qi universal-ctags-git 1> /dev/null 2>&1; then
+	yay universal-ctags-git
 fi
