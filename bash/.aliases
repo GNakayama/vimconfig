@@ -32,3 +32,9 @@ alias dm='disable-dual'
 
 # Paths
 alias development='cd ~/development'
+
+# Loadsmart
+alias kprod='kubectl --context=arn:aws:eks:us-east-1:845156828388:cluster/ls-main-cluster-production'
+alias ksb='kubectl --context=arn:aws:eks:us-east-1:845156828388:cluster/ls-main-cluster-sandbox'
+alias kst='kubectl --context=arn:aws:eks:us-east-1:571579881413:cluster/ls-main-cluster-staging'
+alias kqa='kubectl --context=arn:aws:eks:us-east-1:571579881413:cluster/ls-main-cluster-qa'
