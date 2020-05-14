@@ -21,15 +21,13 @@ nnoremap <space> za
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
- 
+
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
 " Add all Plugins here
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'nvie/vim-flake8'
 Plugin 'ambv/black'
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
@@ -45,16 +43,15 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rainerborene/vim-reek'
 Plugin 'ryanoasis/vim-devicons'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'hashivim/vim-terraform'
 Plugin 'fatih/vim-go'
 Plugin 'fisadev/vim-isort'
 Plugin 'avakhov/vim-yaml'
-Plugin 'vim-scripts/pylint-mode'
 Plugin 'mxw/vim-jsx'
 Plugin 'elzr/vim-json'
 Plugin 'w0rp/ale'
 Plugin 'igemnace/vim-template-lite'
+Bundle 'rubik/vim-radon'
 
 """ VIM-TEMPLATE-LITE {{{
 " declare mappings of patterns to templates to load
@@ -89,9 +86,6 @@ endfunction
 autocmd BufWritePost *.py silent! execute ':call FormatPython()'
 
 
-" Syntastic
-let g:syntastic_always_populate_loc_list=0
-
 " CtrlP
 nnoremap <leader>f :CtrlPTag<cr>
 
@@ -100,28 +94,21 @@ nnoremap <leader>c :!ctags -R<cr>
 set notagrelative
 
 " Ale
+let g:ale_python_pylint_options = '--load-plugins pylint_django'
 let g:ale_python_flake8_args = '--ignore=E501,W508,W503'
 let g:ale_python_flake8_executable = 'flake8'
 let g:ale_python_flake8_options = '--ignore=E501,W508,W503'
+let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint', 'importjs', 'prettier'],
 \}
 
-" Flake8
-let g:syntastic_python_flake8_args='--ignore=E501,W508,W503'
-let g:flake8_show_in_file=1
-autocmd BufWritePost *.py silent! execute ':call flake8#Flake8()'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 let g:SimpylFold_docstring_preview=1
-
-" Pylint
-let g:PyLintCWindow = 1
-let g:PyLintSigns = 1
-let g:PyLintOnWrite = 0
 
 " Go
 let g:go_fmt_command = "goimports"
@@ -213,7 +200,7 @@ if has('persistent_undo')
 	set undolevels=3000
 	set undoreload=10000
 endif
-	
+
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 set backup
@@ -288,3 +275,6 @@ map j gj
 map k gk
 
 let g:python3_host_prog = '/bin/python3'
+
+" Radon
+let g:radon_always_on = 1

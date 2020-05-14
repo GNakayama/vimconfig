@@ -44,13 +44,13 @@ fi
 
 
 /bin/ln .vimrc $HOME/.vimrc
-/bin/ln ./templates $HOME/.vim/templates
+/bin/ln -d ./templates $HOME/.vim/templates
 /bin/vim +PluginInstall +qall
 
 # Install mononoki font if it is not installed
-if ! ls $HOME/.local/share/fonts/NerdFonts/mononoki* 1> /dev/null 2>&1; then
-	install_font_icons
-fi
+#if ! ls $HOME/.local/share/fonts/NerdFonts/mononoki* 1> /dev/null 2>&1; then
+#	install_font_icons
+#fi
 
 # Install ctags if it is not installed
 if ! yay -Qi universal-ctags-git 1> /dev/null 2>&1; then
